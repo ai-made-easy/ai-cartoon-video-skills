@@ -1,12 +1,17 @@
 # AI Cartoon Video Skills
 
 A small, portable skill factory for people who make animated videos with AI coding agents.
-It ships a measured video-analysis skill and installs it into the tools you already use:
+It ships two first-party skills — one that measures a rendered video and one that checks the plan before
+you render it — and installs them into the tools you already use:
 Claude Code, Codex, Cursor, Gemini CLI, Windsurf, Cline, Continue.dev and GitHub Copilot.
 
 The flagship skill is **`animation-quality-review`**: it measures a video frame by frame, shows you the
 frames that matter, and says where a draft falls short of a reference style — with numbers and
 timestamps, not adjectives.
+
+The second is **`pre-render-gate`**: it checks the resolved plan for the defects that cost re-renders —
+overlapping counters, text wider than the frame, duplicate stamps — and refuses the render until the
+plan is clean. One draft, one render.
 
 [Read the write-up](SUBSTACK.md) · [Related skills](docs/RELATED-SKILLS.md)
 
@@ -43,7 +48,12 @@ Then start a new agent session and ask:
 
 > Break down this video and tell me why it looks good. Here is the file: `short.mp4`.
 
+> Run the pre-render gate on my plan before I render it.
+
 ## What gets installed
+
+Both first-party skills install the same way; the paths below are for one skill — use the name you asked for
+(`animation-quality-review` or `pre-render-gate`).
 
 | Tool | Where the skill goes | Extra file |
 |---|---|---|
