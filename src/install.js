@@ -140,7 +140,13 @@ function printInstallSummary(summary) {
     console.log('\nDry run: nothing was written.');
   } else {
     console.log('\nNext: restart the agent (or start a new session) so it discovers the skill.');
-    console.log('Try: "Break down this video and tell me why it looks good."');
+    const hints = {
+      'animation-quality-review': 'Try: "Break down this video and tell me why it looks good."',
+      'pre-render-gate': 'Try: "Run the pre-render gate on my plan before I render it."',
+    };
+    for (const skill of skills) {
+      if (hints[skill.name]) console.log(hints[skill.name]);
+    }
   }
 }
 
