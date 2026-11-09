@@ -47,7 +47,7 @@ test('reports a missing file referenced by SKILL.md', () => {
 test('selects first-party skills by default and rejects unknown names', () => {
   const skills = discoverSkills({ includeCommunity: true });
   const defaults = selectSkills(skills, {});
-  assert.deepEqual(defaults.map((skill) => skill.name), ['animation-quality-review']);
+  assert.deepEqual(defaults.map((skill) => skill.name), ['animation-quality-review', 'pre-render-gate']);
 
   assert.throws(
     () => selectSkills(skills, { requested: ['nope'] }),

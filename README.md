@@ -108,6 +108,30 @@ The numbers point at things to look at. They are not verdicts. The cut detector 
 oversensitive: in the six reference shorts, only 2 of 13 candidates were real hard cuts. The skill
 tells the agent to check every candidate by eye before counting it.
 
+## The pre-render-gate skill
+
+Renders are the expensive step, and most "render, look, fix, render again" cycles chase a defect that was already
+visible in the plan: two counters counting at once, a stamp wider than the frame, a label outliving its number, the
+same text on screen twice. `pre-render-gate` checks the resolved plan (in frames, before rendering) for exactly those,
+prints the overlay number and the change to make, and exits non-zero so a render command can refuse to run.
+
+```bash
+python3 -I scripts/check_overlays.py plan.json
+```
+
+No packages and no video needed — it reads JSON and finishes in milliseconds. Wire it in front of the encoder:
+
+```bash
+python3 -I scripts/check_overlays.py public/<id>/timeline.json || exit 1
+node render.mjs <id>
+```
+
+The skill also carries the review rules that make one render enough: check motion on a contact sheet, check text at
+full size (a 540×960 thumbnail cannot show a clipped stamp), allow at most one re-render, and never stop a running
+render for a cosmetic fix. Geometry (zones, band heights, text-width factors) is configurable with `--config`, so it
+fits any 2D overlay or motion-graphics renderer. The measured case study is in the skill's `SKILL.md`: five renders
+in 55 minutes before the gate, one after.
+
 ## Install options
 
 ```bash
@@ -180,6 +204,7 @@ src/
   install.js                  install, list, targets, doctor
 skills/
   animation-quality-review/            the flagship skill
+  pre-render-gate/                     plan checks before a render (+ review rules)
   community/                  vendored MIT skills
 docs/RELATED-SKILLS.md        the wider video-skill ecosystem
 test/                         node:test suite, including an ffmpeg integration test

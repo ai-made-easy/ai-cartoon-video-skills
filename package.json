@@ -1,7 +1,7 @@
 {
   "name": "ai-cartoon-video-skills",
-  "version": "1.0.0",
-  "description": "Install reusable video-analysis and animation skills for Claude Code, Codex, Cursor, Gemini CLI, Windsurf, Cline, Continue and GitHub Copilot.",
+  "version": "1.1.0",
+  "description": "Install reusable video-analysis, pre-render plan gate and animation skills for Claude Code, Codex, Cursor, Gemini CLI, Windsurf, Cline, Continue and GitHub Copilot.",
   "license": "MIT",
   "type": "commonjs",
   "bin": {
@@ -45,6 +45,9 @@
     "video",
     "animation",
     "ffmpeg",
-    "video-analysis"
+    "video-analysis",
+    "pre-render",
+    "quality-gate",
+    "plan-check"
   ]
 }
