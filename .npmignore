@@ -1,0 +1,7 @@
+test/
+__pycache__/
+*.pyc
+*.tgz
+.DS_Store
+.git/
+.gitignore

@@ -1,0 +1,291 @@
+{
+ "name": "animated-explainer-shorts",
+ "title": "Animated explainer shorts (reference study)",
+ "built": "2026-11-06",
+ "fps": [
+  30.0
+ ],
+ "videos": [
+  {
+   "name": "ancient-jar",
+   "values": {
+    "edge_pct": 4.31,
+    "colours": 538.0,
+    "contrast": 150.0,
+    "saturation": 40.8,
+    "median_motion": 8.22,
+    "pct_still": 2.0,
+    "longest_hold": 0.23,
+    "fast_moves": 9,
+    "settled_pct": 89,
+    "cut_candidates": 5,
+    "wpm": 217,
+    "lufs": -14.0,
+    "lra": 2.3,
+    "true_peak": -1.9,
+    "silences": 0
+   }
+  },
+  {
+   "name": "railroads",
+   "values": {
+    "edge_pct": 4.36,
+    "colours": 687.5,
+    "contrast": 153.5,
+    "saturation": 47.3,
+    "median_motion": 11.32,
+    "pct_still": 0.6,
+    "longest_hold": 0.17,
+    "fast_moves": 17,
+    "settled_pct": 59,
+    "cut_candidates": 3,
+    "wpm": 199,
+    "lufs": -14.0,
+    "lra": 3.0,
+    "true_peak": -2.0,
+    "silences": 0
+   }
+  },
+  {
+   "name": "japan-job",
+   "values": {
+    "edge_pct": 3.68,
+    "colours": 559,
+    "contrast": 169,
+    "saturation": 40.1,
+    "median_motion": 8.86,
+    "pct_still": 0.3,
+    "longest_hold": 0.1,
+    "fast_moves": 7,
+    "settled_pct": 71,
+    "cut_candidates": 0,
+    "wpm": 222,
+    "lufs": -14.0,
+    "lra": 1.8,
+    "true_peak": -1.6,
+    "silences": 0
+   }
+  },
+  {
+   "name": "idea-zone",
+   "values": {
+    "edge_pct": 3.31,
+    "colours": 276.0,
+    "contrast": 163.5,
+    "saturation": 48.5,
+    "median_motion": 4.22,
+    "pct_still": 1.2,
+    "longest_hold": 0.17,
+    "fast_moves": 1,
+    "settled_pct": 100,
+    "cut_candidates": 0,
+    "wpm": 223,
+    "lufs": -15.6,
+    "lra": 3.2,
+    "true_peak": -2.9,
+    "silences": 0
+   }
+  },
+  {
+   "name": "pirate-cannonballs",
+   "values": {
+    "edge_pct": 3.49,
+    "colours": 573,
+    "contrast": 155,
+    "saturation": 48.4,
+    "median_motion": 10.71,
+    "pct_still": 1.9,
+    "longest_hold": 0.33,
+    "fast_moves": 18,
+    "settled_pct": 61,
+    "cut_candidates": 3,
+    "wpm": 206,
+    "lufs": -14.0,
+    "lra": 2.1,
+    "true_peak": -1.8,
+    "silences": 0
+   }
+  },
+  {
+   "name": "knight",
+   "values": {
+    "edge_pct": 4.71,
+    "colours": 786,
+    "contrast": 166,
+    "saturation": 48.3,
+    "median_motion": 9.78,
+    "pct_still": 0.6,
+    "longest_hold": 0.1,
+    "fast_moves": 6,
+    "settled_pct": 100,
+    "cut_candidates": 2,
+    "wpm": 233,
+    "lufs": -14.9,
+    "lra": 2.6,
+    "true_peak": -2.8,
+    "silences": 0
+   }
+  }
+ ],
+ "ranges": {
+  "edge_pct": {
+   "low": 3.31,
+   "high": 4.71,
+   "median": 3.995,
+   "videos": 6
+  },
+  "colours": {
+   "low": 276.0,
+   "high": 786,
+   "median": 566.0,
+   "videos": 6
+  },
+  "contrast": {
+   "low": 150.0,
+   "high": 169,
+   "median": 159.25,
+   "videos": 6
+  },
+  "saturation": {
+   "low": 40.1,
+   "high": 48.5,
+   "median": 47.8,
+   "videos": 6
+  },
+  "median_motion": {
+   "low": 4.22,
+   "high": 11.32,
+   "median": 9.32,
+   "videos": 6
+  },
+  "pct_still": {
+   "low": 0.3,
+   "high": 2.0,
+   "median": 0.8999999999999999,
+   "videos": 6
+  },
+  "longest_hold": {
+   "low": 0.1,
+   "high": 0.33,
+   "median": 0.17,
+   "videos": 6
+  },
+  "fast_moves": {
+   "low": 1,
+   "high": 18,
+   "median": 8.0,
+   "videos": 6
+  },
+  "settled_pct": {
+   "low": 59,
+   "high": 100,
+   "median": 80.0,
+   "videos": 6
+  },
+  "cut_candidates": {
+   "low": 0,
+   "high": 5,
+   "median": 2.5,
+   "videos": 6
+  },
+  "wpm": {
+   "low": 199,
+   "high": 233,
+   "median": 219.5,
+   "videos": 6
+  },
+  "lufs": {
+   "low": -15.6,
+   "high": -14.0,
+   "median": -14.0,
+   "videos": 6
+  },
+  "lra": {
+   "low": 1.8,
+   "high": 3.2,
+   "median": 2.45,
+   "videos": 6
+  },
+  "true_peak": {
+   "low": -2.9,
+   "high": -1.6,
+   "median": -1.95,
+   "videos": 6
+  },
+  "silences": {
+   "low": 0,
+   "high": 0,
+   "median": 0.0,
+   "videos": 6
+  }
+ },
+ "frame_limits": {
+  "edge_pct": {
+   "low": 1.92
+  },
+  "colours": {
+   "low": 290
+  },
+  "contrast": {
+   "low": 115,
+   "high": 196
+  },
+  "saturation": {
+   "low": 31.4,
+   "high": 61.4
+  }
+ },
+ "targets": {
+  "edge_pct": {
+   "min": 4.0
+  },
+  "colours": {
+   "min": 550
+  },
+  "contrast": {
+   "min": 150,
+   "max": 169
+  },
+  "saturation": {
+   "min": 40,
+   "max": 48.5
+  },
+  "median_motion": {
+   "min": 6
+  },
+  "pct_still": {
+   "max": 2
+  },
+  "longest_hold": {
+   "max": 0.33
+  },
+  "fast_moves": {
+   "max": 18
+  },
+  "cut_candidates": {
+   "max": 8
+  },
+  "wpm": {
+   "min": 199,
+   "max": 233
+  },
+  "lufs": {
+   "min": -15.6,
+   "max": -13.5
+  },
+  "lra": {
+   "min": 1.8,
+   "max": 3.2
+  },
+  "true_peak": {
+   "max": -1
+  },
+  "silences": {
+   "max": 0
+  }
+ },
+ "notes": [
+  "Six videos from one channel. These describe this look, and don't predict views: Idea Zone has the plainest picture here and reached 14.4M.",
+  "Detail, colour and motion targets were chosen while polishing one short, aiming at the richer videos here, so some references miss them too. A plainer style can be right on purpose."
+ ]
+}

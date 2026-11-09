@@ -1,0 +1,25 @@
+node_modules/
+.DS_Store
+*.log
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local install output
+.claude/skills/
+.agents/skills/
+.codex/skills/
+.cursor/skills/
+.cursor/rules/
+.gemini/skills/
+.windsurf/rules/
+.clinerules/
+.continue/rules/
+.github/instructions/
+
+# Test and render output
+test/tmp/
+out/
+*.mp4
+*.wav

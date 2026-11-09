@@ -1,0 +1,50 @@
+{
+  "name": "ai-cartoon-video-skills",
+  "version": "1.0.0",
+  "description": "Install reusable video-analysis and animation skills for Claude Code, Codex, Cursor, Gemini CLI, Windsurf, Cline, Continue and GitHub Copilot.",
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "ai-cartoon-video-skills": "bin/cli.js",
+    "acvs": "bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "skills/",
+    "docs/",
+    "README.md",
+    "SUBSTACK.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ai-made-easy/ai-cartoon-video-skills.git"
+  },
+  "homepage": "https://github.com/ai-made-easy/ai-cartoon-video-skills#readme",
+  "bugs": {
+    "url": "https://github.com/ai-made-easy/ai-cartoon-video-skills/issues"
+  },
+  "keywords": [
+    "claude-code",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "windsurf",
+    "cline",
+    "continue",
+    "copilot",
+    "agent-skills",
+    "npx",
+    "video",
+    "animation",
+    "ffmpeg",
+    "video-analysis"
+  ]
+}
