@@ -1,0 +1,468 @@
+{
+ "version": 1,
+ "name": "Long-video spec (calibrated on one 15-minute reference video)",
+ "about": "Targets for a long animated video, checked by scripts/video_qa.py. Plan targets: a mix measured on the first 15 minutes of one reference video, labelled by eye every 3 seconds. Pixel targets: that video's per-window p10 to p90. Judging: PASS inside the range, WARN within 25 % of the range width outside, FAIL beyond; a rule FAILs when fewer than 50 % of its windows pass. Edit the numbers or re-make them with --calibrate on your own reference.",
+ "rules": [
+  {
+   "id": "whole.map",
+   "metric": "plan_whole.share.map",
+   "text": "Whole: map share",
+   "window": 60,
+   "min": 0.28,
+   "max": 0.42,
+   "scope": "whole"
+  },
+  {
+   "id": "whole.narrator",
+   "metric": "plan_whole.share.narrator",
+   "text": "Whole: Narrator share",
+   "window": 60,
+   "min": 0.3,
+   "max": 0.4,
+   "scope": "whole"
+  },
+  {
+   "id": "whole.story",
+   "metric": "plan_whole.share.story",
+   "text": "Whole: story-scene share",
+   "window": 60,
+   "min": 0.15,
+   "max": 0.22,
+   "scope": "whole"
+  },
+  {
+   "id": "whole.image",
+   "metric": "plan_whole.share.image",
+   "text": "Whole: full-screen image share",
+   "window": 60,
+   "min": 0.03,
+   "max": 0.1,
+   "scope": "whole"
+  },
+  {
+   "id": "whole.card",
+   "metric": "plan_whole.share.card",
+   "text": "Whole: small photo cards on maps",
+   "window": 60,
+   "max": 0.05,
+   "scope": "whole"
+  },
+  {
+   "id": "whole.mapfamily",
+   "metric": "plan_whole.map_family_run_s",
+   "text": "Whole: longest stretch without leaving the map (s)",
+   "window": 60,
+   "max": 40,
+   "scope": "whole"
+  },
+  {
+   "id": "w60.map",
+   "metric": "plan.share.map",
+   "text": "Map share per minute",
+   "window": 60,
+   "calibrate": "both",
+   "min": 0.13,
+   "max": 0.563,
+   "reference": {
+    "p10": 0.13,
+    "p50": 0.45,
+    "p90": 0.563,
+    "n": 27
+   }
+  },
+  {
+   "id": "w60.narrator",
+   "metric": "plan.share.narrator",
+   "text": "Narrator share per minute",
+   "window": 60,
+   "calibrate": "both",
+   "min": 0.18,
+   "max": 0.59,
+   "reference": {
+    "p10": 0.18,
+    "p50": 0.35,
+    "p90": 0.59,
+    "n": 27
+   }
+  },
+  {
+   "id": "w120.story",
+   "metric": "plan.share.story",
+   "text": "Story-scene share per 2 min",
+   "window": 120,
+   "calibrate": "low",
+   "min": 0.084,
+   "reference": {
+    "p10": 0.084,
+    "p50": 0.225,
+    "p90": 0.275,
+    "n": 13
+   }
+  },
+  {
+   "id": "w120.scenes",
+   "metric": "plan.story_scenes",
+   "text": "Story scenes per 2 min",
+   "window": 120,
+   "min": 1
+  },
+  {
+   "id": "w60.card",
+   "metric": "plan.share.card",
+   "text": "Small photo-card share per minute",
+   "window": 60,
+   "max": 0.1
+  },
+  {
+   "id": "w60.image",
+   "metric": "plan.share.image",
+   "text": "Full-screen image share per minute",
+   "window": 60,
+   "max": 0.3
+  },
+  {
+   "id": "w60.text",
+   "metric": "plan.share.text",
+   "text": "Text/chart card share per minute",
+   "window": 60,
+   "max": 0.2
+  },
+  {
+   "id": "w60.run.map",
+   "metric": "plan.longest_run_s.map",
+   "text": "Longest map run (s)",
+   "window": 60,
+   "max": 30
+  },
+  {
+   "id": "w60.run.narrator",
+   "metric": "plan.longest_run_s.narrator",
+   "text": "Longest narrator beat (s)",
+   "window": 60,
+   "max": 21
+  },
+  {
+   "id": "w60.run.story",
+   "metric": "plan.longest_run_s.story",
+   "text": "Longest story scene (s)",
+   "window": 60,
+   "max": 20
+  },
+  {
+   "id": "w60.run.image",
+   "metric": "plan.longest_run_s.image",
+   "text": "Longest full-screen image (s)",
+   "window": 60,
+   "max": 9
+  },
+  {
+   "id": "w60.run.card",
+   "metric": "plan.longest_run_s.card",
+   "text": "Longest small card (s)",
+   "window": 60,
+   "max": 6
+  },
+  {
+   "id": "w60.mapfamily",
+   "metric": "plan.map_family_run_s",
+   "text": "Longest stretch without leaving the map (s)",
+   "window": 60,
+   "max": 40
+  },
+  {
+   "id": "w60.changes",
+   "metric": "plan.type_changes_per_min",
+   "text": "Picture-type changes per minute",
+   "window": 60,
+   "calibrate": "both",
+   "min": 4.0,
+   "max": 9.0,
+   "reference": {
+    "p10": 4.0,
+    "p50": 6.0,
+    "p90": 9.0,
+    "n": 27
+   }
+  },
+  {
+   "id": "w30.events",
+   "metric": "plan.events_per_10s",
+   "text": "New on-screen events per 10 s (timeline only)",
+   "window": 30,
+   "min": 3
+  },
+  {
+   "id": "px.motion_mean",
+   "metric": "pixel.motion_mean",
+   "text": "Motion energy (mean frame difference, 0-255)",
+   "window": 60,
+   "calibrate": "both",
+   "min": 8.506,
+   "max": 15.83,
+   "reference": {
+    "p10": 8.506,
+    "p50": 11.62,
+    "p90": 15.83,
+    "n": 27
+   }
+  },
+  {
+   "id": "px.changed_pct_median",
+   "metric": "pixel.changed_pct_median",
+   "text": "Pixels changed per 0.5 s, median %",
+   "window": 60,
+   "calibrate": "both",
+   "min": 4.092,
+   "max": 29.028,
+   "reference": {
+    "p10": 4.092,
+    "p50": 16.44,
+    "p90": 29.028,
+    "n": 27
+   }
+  },
+  {
+   "id": "px.cuts_per_min",
+   "metric": "pixel.cuts_per_min",
+   "text": "Hard cuts per minute",
+   "window": 60,
+   "calibrate": "both",
+   "min": 3.6,
+   "max": 8.0,
+   "reference": {
+    "p10": 3.6,
+    "p50": 5.0,
+    "p90": 8.0,
+    "n": 27
+   }
+  },
+  {
+   "id": "px.longest_static_s",
+   "metric": "pixel.longest_static_s",
+   "text": "Longest static hold (s)",
+   "window": 60,
+   "calibrate": "high",
+   "max": 2.5,
+   "reference": {
+    "p10": 1.5,
+    "p50": 2.0,
+    "p90": 2.5,
+    "n": 27
+   }
+  },
+  {
+   "id": "px.edge_density",
+   "metric": "pixel.edge_density",
+   "text": "Visual complexity (edge density)",
+   "window": 60,
+   "calibrate": "both",
+   "min": 0.141,
+   "max": 0.204,
+   "reference": {
+    "p10": 0.141,
+    "p50": 0.168,
+    "p90": 0.204,
+    "n": 27
+   }
+  },
+  {
+   "id": "px.colourfulness",
+   "metric": "pixel.colourfulness",
+   "text": "Colourfulness (Hasler-Suesstrunk)",
+   "window": 60,
+   "calibrate": "both",
+   "min": 49.6,
+   "max": 74.0,
+   "reference": {
+    "p10": 49.6,
+    "p50": 62.7,
+    "p90": 74.0,
+    "n": 27
+   }
+  },
+  {
+   "id": "px.brightness",
+   "metric": "pixel.brightness",
+   "text": "Mean brightness (0-255)",
+   "window": 60,
+   "calibrate": "both",
+   "min": 125.96,
+   "max": 168.96,
+   "reference": {
+    "p10": 125.96,
+    "p50": 146.4,
+    "p90": 168.96,
+    "n": 27
+   }
+  },
+  {
+   "id": "px.contrast",
+   "metric": "pixel.contrast",
+   "text": "Contrast (luma std)",
+   "window": 60,
+   "calibrate": "both",
+   "min": 37.94,
+   "max": 51.44,
+   "reference": {
+    "p10": 37.94,
+    "p50": 46.1,
+    "p90": 51.44,
+    "n": 27
+   }
+  }
+ ],
+ "structure": {
+  "source": "reference video 0-15 min, 300 frames every 3 s, hand-labelled (sampling rounds lengths to 3 s)",
+  "segment_s": {
+   "median": 6,
+   "p90": 15
+  },
+  "family_segment_s": {
+   "median": 9,
+   "p90": 15
+  },
+  "type_changes_per_min": 6.2,
+  "segment_by_type_s": {
+   "map": {
+    "median": 9,
+    "p90": 21,
+    "max": 27
+   },
+   "narrator_wall": {
+    "median": 9,
+    "p90": 15,
+    "max": 21
+   },
+   "narrator_over_picture": {
+    "median": 4.5,
+    "p90": 9
+   },
+   "story": {
+    "median": 9,
+    "p90": 15,
+    "max": 15
+   },
+   "full_image": {
+    "median": 9,
+    "max": 9
+   },
+   "card_on_map": {
+    "median": 6,
+    "max": 6
+   },
+   "narrator_in_drawn_set": {
+    "max": 24
+   }
+  },
+  "transitions": {
+   "map>narrator": 22,
+   "narrator>map": 20,
+   "narrator>story": 10,
+   "story>narrator": 9,
+   "story>map": 6,
+   "map>story": 6,
+   "narrator>image": 3,
+   "image>narrator": 3
+  },
+  "recurrence_s": {
+   "map": {
+    "median": 22.5,
+    "max": 84
+   },
+   "narrator": {
+    "median": 18,
+    "max": 72
+   },
+   "story": {
+    "median": 36,
+    "max": 150
+   },
+   "image": {
+    "median": 108
+   }
+  },
+  "story_scenes_per_15min": 15,
+  "minutes_with_a_scene": "11 of 15"
+ },
+ "calibration": {
+  "source": "reference video 0:00-15:00, sponsor read (282-351 s) excluded",
+  "date": "2026-11-10"
+ },
+ "cadence": {
+  "about": "Hard rules: within every X seconds, Y must happen. Checked on the whole timeline (excluded spans such as a sponsor read do not count); every gap longer than X is reported with its time. X = the reference video's worst gap, rounded up, so the reference passes its own test. The last skip_end_s seconds of a whole video (a subscribe ending) are exempt.",
+  "rules": [
+   {
+    "id": "new",
+    "kind": "new",
+    "every_s": 4,
+    "pixel_changed": 0.01,
+    "text": "something new on screen (a plan event, a cut, or >= 1 % of pixels changing in 0.5 s)",
+    "suggested_s": 3
+   },
+   {
+    "id": "events",
+    "kind": "events",
+    "every_s": 10,
+    "min_events": 3,
+    "text": "at least 3 new on-screen events (pins, labels, cards, poses, lines, counters) in any 10 s"
+   },
+   {
+    "id": "motion",
+    "kind": "motion",
+    "every_s": 4,
+    "pixel_changed": 0.002,
+    "text": "a camera move or a cut (no frozen picture)",
+    "suggested_s": 15
+   },
+   {
+    "id": "typechange",
+    "kind": "typechange",
+    "every_s": 28,
+    "text": "the picture type changes (map / narrator / story scene / image / card / text)",
+    "suggested_s": 20
+   },
+   {
+    "id": "offmap",
+    "kind": "offmap",
+    "every_s": 40,
+    "text": "leave the map at least once",
+    "suggested_s": 40
+   },
+   {
+    "id": "narrator",
+    "kind": "narrator",
+    "every_s": 60,
+    "text": "the narrator appears",
+    "suggested_s": 60
+   },
+   {
+    "id": "story",
+    "kind": "story",
+    "every_s": 140,
+    "text": "a cartoon story scene appears",
+    "suggested_s": 120
+   },
+   {
+    "id": "image",
+    "kind": "image_max",
+    "every_s": 9,
+    "text": "a full-screen image ends (max hold)",
+    "suggested_s": 9
+   },
+   {
+    "id": "acting_pose",
+    "kind": "acting_pose",
+    "every_s": 3,
+    "text": "inside a story scene: a pose or expression change"
+   },
+   {
+    "id": "acting_line",
+    "kind": "acting_line",
+    "every_s": 6,
+    "text": "inside a story scene: a spoken line or bubble appears"
+   }
+  ],
+  "tuning": "every_s = the reference's worst gap rounded up (first 15 min, sponsor read skipped; plan rules come from 3-second tags, so plus or minus 1.5 s). suggested_s = a stricter first proposal. The acting rules come from 3-fps bursts of the reference's dialogue scenes.",
+  "skip_end_s": 35
+ }
+}

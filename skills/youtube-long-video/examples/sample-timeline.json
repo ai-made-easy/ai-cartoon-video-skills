@@ -1,0 +1,29 @@
+{
+"about": "Small sample plan (3 minutes) in the timeline format video_qa.py reads. Times are in seconds. 'events' are offsets from the shot start.",
+"shots": [
+  {"start": 0, "dur": 9, "type": "map", "events": [1.0, 3.0, 5.0, 7.0]},
+  {"start": 9, "dur": 9, "type": "narrator", "events": [1.0, 3.0, 5.0, 7.0]},
+  {"start": 18, "dur": 12, "type": "story", "events": [1.0, 3.0, 5.0, 7.0, 9.0, 11.0], "poses": [0.5, 2.5, 5, 7.5, 10], "lines": [1, 4.5, 8]},
+  {"start": 30, "dur": 6, "type": "map", "events": [1.0, 3.0, 5.0]},
+  {"start": 36, "dur": 4, "type": "image", "events": [1.5]},
+  {"start": 40, "dur": 8, "type": "narrator", "over_map": true, "events": [1.0, 3.0, 5.0, 7.0]},
+  {"start": 48, "dur": 6, "type": "map", "events": [1.0, 3.0, 5.0]},
+  {"start": 54, "dur": 6, "type": "narrator", "events": [1.0, 3.0, 5.0]},
+  {"start": 60, "dur": 9, "type": "map", "events": [1.0, 3.0, 5.0, 7.0]},
+  {"start": 69, "dur": 9, "type": "narrator", "events": [1.0, 3.0, 5.0, 7.0]},
+  {"start": 78, "dur": 12, "type": "story", "events": [1.0, 3.0, 5.0, 7.0, 9.0, 11.0], "poses": [0.5, 2.5, 5, 7.5, 10], "lines": [1, 4.5, 8]},
+  {"start": 90, "dur": 6, "type": "map", "events": [1.0, 3.0, 5.0]},
+  {"start": 96, "dur": 4, "type": "image", "events": [1.5]},
+  {"start": 100, "dur": 8, "type": "narrator", "over_map": true, "events": [1.0, 3.0, 5.0, 7.0]},
+  {"start": 108, "dur": 6, "type": "map", "events": [1.0, 3.0, 5.0]},
+  {"start": 114, "dur": 6, "type": "narrator", "events": [1.0, 3.0, 5.0]},
+  {"start": 120, "dur": 9, "type": "map", "events": [1.0, 3.0, 5.0, 7.0]},
+  {"start": 129, "dur": 9, "type": "narrator", "events": [1.0, 3.0, 5.0, 7.0]},
+  {"start": 138, "dur": 12, "type": "story", "events": [1.0, 3.0, 5.0, 7.0, 9.0, 11.0], "poses": [0.5, 2.5, 5, 7.5, 10], "lines": [1, 4.5, 8]},
+  {"start": 150, "dur": 6, "type": "map", "events": [1.0, 3.0, 5.0]},
+  {"start": 156, "dur": 4, "type": "image", "events": [1.5]},
+  {"start": 160, "dur": 8, "type": "narrator", "over_map": true, "events": [1.0, 3.0, 5.0, 7.0]},
+  {"start": 168, "dur": 6, "type": "map", "events": [1.0, 3.0, 5.0]},
+  {"start": 174, "dur": 6, "type": "narrator", "events": [1.0, 3.0, 5.0]}
+]
+}

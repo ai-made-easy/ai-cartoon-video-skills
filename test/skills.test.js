@@ -47,7 +47,11 @@ test('reports a missing file referenced by SKILL.md', () => {
 test('selects first-party skills by default and rejects unknown names', () => {
   const skills = discoverSkills({ includeCommunity: true });
   const defaults = selectSkills(skills, {});
-  assert.deepEqual(defaults.map((skill) => skill.name), ['animation-quality-review', 'pre-render-gate']);
+  assert.deepEqual(defaults.map((skill) => skill.name), [
+    'animation-quality-review',
+    'pre-render-gate',
+    'youtube-long-video',
+  ]);
 
   assert.throws(
     () => selectSkills(skills, { requested: ['nope'] }),
@@ -77,4 +81,16 @@ test('skill folders match their frontmatter names', () => {
   for (const skill of discoverSkills({ includeCommunity: true })) {
     assert.equal(skill.name, path.basename(skill.directory));
   }
+});
+
+test('youtube-long-video is a valid first-party skill with standalone scripts', () => {
+  const skills = discoverSkills();
+  const skill = skills.find((item) => item.name === 'youtube-long-video');
+  assert.ok(skill, 'youtube-long-video should be discovered');
+  assert.equal(skill.source, 'first-party');
+  assert.match(skill.description, /8 to 20 minutes/);
+  assert.deepEqual(validateSkill(skill), []);
+  assert.deepEqual(missingReferences(skill), []);
+  const selected = selectSkills(skills, { requested: ['youtube-long-video'] });
+  assert.equal(selected.length, 1);
 });

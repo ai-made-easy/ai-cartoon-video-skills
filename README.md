@@ -1,17 +1,22 @@
 # AI Cartoon Video Skills
 
 A small, portable skill factory for people who make animated videos with AI coding agents.
-It ships two first-party skills — one that measures a rendered video and one that checks the plan before
-you render it — and installs them into the tools you already use:
+It ships three first-party skills, grouped by the kind of video: two **YouTube Short skills** (one measures a
+rendered video, one checks the plan before you render it) and one **YouTube Long skill** (rhythm and variety checks
+for long animated videos). It installs them into the tools you already use:
 Claude Code, Codex, Cursor, Gemini CLI, Windsurf, Cline, Continue.dev and GitHub Copilot.
 
 The flagship skill is **`animation-quality-review`**: it measures a video frame by frame, shows you the
 frames that matter, and says where a draft falls short of a reference style — with numbers and
 timestamps, not adjectives.
 
-The second is **`pre-render-gate`**: it checks the resolved plan for the defects that cost re-renders —
+The second Short skill is **`pre-render-gate`**: it checks the resolved plan for the defects that cost re-renders —
 overlapping counters, text wider than the frame, duplicate stamps — and refuses the render until the
 plan is clean. One draft, one render.
+
+These two are the **YouTube Short skills**. The **YouTube Long skill** is **`youtube-long-video`**: it measures a
+reference long video (8 to 20 minutes) from screenshots, turns that into rules, and checks your own plan and render
+for rhythm and variety with a deterministic script.
 
 [Read the write-up](SUBSTACK.md) · [Related skills](docs/RELATED-SKILLS.md)
 
@@ -50,10 +55,12 @@ Then start a new agent session and ask:
 
 > Run the pre-render gate on my plan before I render it.
 
+> Check the rhythm and variety of my long animated video against this reference, before I render it.
+
 ## What gets installed
 
-Both first-party skills install the same way; the paths below are for one skill — use the name you asked for
-(`animation-quality-review` or `pre-render-gate`).
+All three first-party skills install the same way; the paths below are for one skill — use the name you asked for
+(`animation-quality-review`, `pre-render-gate` or `youtube-long-video`).
 
 | Tool | Where the skill goes | Extra file |
 |---|---|---|
@@ -142,6 +149,20 @@ render for a cosmetic fix. Geometry (zones, band heights, text-width factors) is
 fits any 2D overlay or motion-graphics renderer. The measured case study is in the skill's `SKILL.md`: five renders
 in 55 minutes before the gate, one after.
 
+## The youtube-long-video skill (YouTube Long skill)
+
+For long animated YouTube videos of 8 to 20 minutes (narrator character, animated maps, story scenes). A first long
+video can look fine and still feel flat: too long on one kind of picture, too little new every few seconds, a flat
+voice. The skill measures a reference video you admire, turns it into numbers, and tests your own plan and render
+against them. It does not judge story, facts or taste.
+
+```bash
+python3 skills/youtube-long-video/scripts/video_qa.py --timeline skills/youtube-long-video/examples/sample-timeline.json --out qa-out
+```
+
+It needs Python 3 and `numpy` (`uv run --with numpy python3 ...` works without installing); the screenshot sheets
+also need `pillow` and `ffmpeg`. See the skill's own README for the full workflow.
+
 ## Install options
 
 ```bash
@@ -213,8 +234,9 @@ src/
   targets.js                  where each tool reads skills and rules
   install.js                  install, list, targets, doctor
 skills/
-  animation-quality-review/            the flagship skill
-  pre-render-gate/                     plan checks before a render (+ review rules)
+  animation-quality-review/            YouTube Short skill: the flagship measuring skill
+  pre-render-gate/                     YouTube Short skill: plan checks before a render (+ review rules)
+  youtube-long-video/                  YouTube Long skill: rhythm and variety checks for long videos
   community/                  vendored MIT skills
 docs/RELATED-SKILLS.md        the wider video-skill ecosystem
 test/                         node:test suite, including an ffmpeg integration test

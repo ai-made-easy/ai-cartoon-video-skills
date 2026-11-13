@@ -143,6 +143,7 @@ function printInstallSummary(summary) {
     const hints = {
       'animation-quality-review': 'Try: "Break down this video and tell me why it looks good."',
       'pre-render-gate': 'Try: "Run the pre-render gate on my plan before I render it."',
+      'youtube-long-video': 'Try: "Check the rhythm of my long video plan against this reference."',
     };
     for (const skill of skills) {
       if (hints[skill.name]) console.log(hints[skill.name]);

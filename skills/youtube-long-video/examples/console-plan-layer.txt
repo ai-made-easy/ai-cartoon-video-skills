@@ -1,0 +1,5 @@
+$ python3 scripts/video_qa.py --timeline examples/sample-timeline.json --out plan-out
+(plan layer only, before any rendering)
+
+score 100/100 -> plan-out/qa-plan.md
+exit 0

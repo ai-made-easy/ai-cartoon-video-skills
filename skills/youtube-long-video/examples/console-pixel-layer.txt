@@ -1,0 +1,13 @@
+$ python3 scripts/video_qa.py --video clip3min_480p.mp4 --out qa-out
+(clip3min_480p.mp4 = a 3-minute, 480p piece of a finished tutorial video, a dark screen-recording style video. Pixel layer only, no timeline. Run on a laptop in about 13 seconds.)
+
+score 25/100 -> qa-out/qa.md
+FAIL  Motion energy (mean frame difference, 0-255): 1.99 (target 8.506-15.83)
+WARN  Pixels changed per 0.5 s, median %: 0.25 (target 4.092-29.028)
+FAIL  Hard cuts per minute: 0.0 (target 3.6-8.0)
+FAIL  Visual complexity (edge density): 0.082 (target 0.141-0.204)
+FAIL  Colourfulness (Hasler-Suesstrunk): 18.3 (target 49.6-74.0)
+FAIL  Mean brightness (0-255): 31.8 (target 125.96-168.96)
+FAIL  Contrast (luma std): 31.9 (target 37.94-51.44)
+FAIL  Cadence: something new on screen (a plan event, a cut, or >= 1 % of pixels changing in 0.5 s): 10.0 (target None-4)
+exit code: 1 (some rules FAIL)
